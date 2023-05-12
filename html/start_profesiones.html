@@ -1,0 +1,62 @@
+
+<!-- start_profesiones.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Información de profesiones</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+  <form method="post" action="/profesiones">
+    <legend>Información de profesiones</legend>
+    <fieldset  class="d-grid" >
+      <label for="profesión">Selecciona una profesión:</label>
+      <select id="profesión" name="profesión" class="col-form-label col-form-label-sm">
+        <option value="Ingeniero">Ingeniero</option>
+        <option value="Médico">Médico</option>
+        <option value="Abogado">Abogado</option>
+      </select>
+      <label for="area" class="col-form-label col-form-label-sm">Area:</label>
+      <input type="text" id="area" name="area" >
+      <div id="atributos">
+        <label for="sector" class="col-form-label col-form-label-sm">Sector:</label>
+        <input type="text" id="sector" name="sector" >
+      </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Revisar</button>
+  </form>
+
+  <script>
+    const profesioneselect = document.getElementById("profesión");
+    const atributosDiv = document.getElementById("atributos");
+
+    function mostrarAtributos() {
+      const profesión = profesioneselect.value;
+      atributosDiv.innerHTML = "";
+
+      if (profesión === "Ingeniero") {
+        atributosDiv.innerHTML += `
+        <label for="sector" class="col-form-label col-form-label-sm">Sector:</label>
+        <input type="text" id="sector" name="sector" >
+          `;
+      } else if (profesión === "Médico") {
+        atributosDiv.innerHTML += `
+            <label for="especialidad" class="col-form-label col-form-label-sm">Especialidad:</label>
+            <input type="text" id="especialidad" name="especialidad">
+          `;
+      } else if (profesión === "Abogado") {
+        atributosDiv.innerHTML += `
+            <label for="rama" class="col-form-label col-form-label-sm">Rama:</label>
+            <input type="text" id="rama" name="rama">
+          `;
+      }
+    }
+    profesioneselect.addEventListener("change", mostrarAtributos);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+
+<!--profesiones.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Información de la profesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+</head>
+
+<body>
+    <fieldset>
+        <legend>Información de profesiones</legend>
+        <div class="form-group row">
+            {% if profesión %}
+            <p><strong>Nombre:</strong> {{ profesión.nombre }}</p>
+            <p><strong>Area:</strong> {{ profesión.area }}</p>
+            {% if (profesión.Nombre == "Ingeniero") %}
+            <p><strong>Sector:</strong> {{ profesión.sector }}</p>
+            {% elif (profesión.Nombre== "Médico") %}
+            <p><strong>Especialidad:</strong> {{ profesión.especialidad }}</p>
+            {% elif (profesión.Nombre == "Abogado") %}
+            <p><strong>Rama:</strong> {{ profesión.rama }}</p>
+            {% endif %}
+            <p><strong>Descripcion:</strong> {{ profesión.descripcion() }}</p>
+            {% else %}
+            <p>La profesión seleccionada no fue encontrada en la lista.</p>
+            {% endif %}
+            <form method="get" action="/">
+                <button type="submit" class="btn btn-primary">Mas profesiones</button>
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>
