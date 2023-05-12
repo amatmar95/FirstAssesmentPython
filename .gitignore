@@ -1,4 +1,4 @@
 env/
-__pyche__/
+__pycache__/
 .vscode/
 contenidocodigo.zip/

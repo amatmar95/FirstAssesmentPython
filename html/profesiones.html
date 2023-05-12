@@ -17,12 +17,12 @@
             {% if profesion %}
             <p><strong>Nombre:</strong> {{ profesion.nombre }}</p>
             <p><strong>Area:</strong> {{ profesion.area }}</p>
-            {% if (profesion.Nombre == "Ingeniero") %}
-            <p><strong>Sector:</strong> {{ profesion.sector }}</p>
-            {% elif (profesion.Nombre== "Médico") %}
+            {% if (profesion.nombre == "Ingeniero") %}
+            <p><strong>Sector:</strong> {{ profesion.especialidad }}</p>
+            {% elif (profesion.nombre== "Medico") %}
             <p><strong>Especialidad:</strong> {{ profesion.especialidad }}</p>
-            {% elif (profesion.Nombre == "Abogado") %}
-            <p><strong>Rama:</strong> {{ profesion.rama }}</p>
+            {% elif (profesion.nombre == "Abogado") %}
+            <p><strong>Rama:</strong> {{ profesion.especialidad }}</p>
             {% endif %}
             <p><strong>Descripcion:</strong> {{ profesion.descripcion() }}</p>
             {% else %}
