@@ -14,17 +14,17 @@
     <fieldset>
         <legend>Información de profesiones</legend>
         <div class="form-group row">
-            {% if profesión %}
-            <p><strong>Nombre:</strong> {{ profesión.nombre }}</p>
-            <p><strong>Area:</strong> {{ profesión.area }}</p>
-            {% if (profesión.Nombre == "Ingeniero") %}
-            <p><strong>Sector:</strong> {{ profesión.sector }}</p>
-            {% elif (profesión.Nombre== "Médico") %}
-            <p><strong>Especialidad:</strong> {{ profesión.especialidad }}</p>
-            {% elif (profesión.Nombre == "Abogado") %}
-            <p><strong>Rama:</strong> {{ profesión.rama }}</p>
+            {% if profesion %}
+            <p><strong>Nombre:</strong> {{ profesion.nombre }}</p>
+            <p><strong>Area:</strong> {{ profesion.area }}</p>
+            {% if (profesion.Nombre == "Ingeniero") %}
+            <p><strong>Sector:</strong> {{ profesion.sector }}</p>
+            {% elif (profesion.Nombre== "Médico") %}
+            <p><strong>Especialidad:</strong> {{ profesion.especialidad }}</p>
+            {% elif (profesion.Nombre == "Abogado") %}
+            <p><strong>Rama:</strong> {{ profesion.rama }}</p>
             {% endif %}
-            <p><strong>Descripcion:</strong> {{ profesión.descripcion() }}</p>
+            <p><strong>Descripcion:</strong> {{ profesion.descripcion() }}</p>
             {% else %}
             <p>La profesión seleccionada no fue encontrada en la lista.</p>
             {% endif %}
